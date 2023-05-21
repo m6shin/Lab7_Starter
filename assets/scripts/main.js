@@ -105,13 +105,13 @@ async function getRecipes() {
   //            article on fetch(). NOTE: Fetches are ASYNCHRONOUS, meaning that
   //            you must either use "await fetch(...)" or "fetch.then(...)". This
   //            function is using the async keyword so we recommend "await"
-        let fetchedRecipe = await fetch(recipe);
+        let response = await fetch(recipe);
   // A7. TODO - For each fetch response, retrieve the JSON from it using .json().
   //            NOTE: .json() is ALSO asynchronous, so you will need to use
   //            "await" again
-        fetchedRecipe = await response.json();
+        response = await response.json();
   // A8. TODO - Add the new recipe to the recipes array
-        recipes.push(fetchedRecipe);
+        recipes.push(response);
   // A9. TODO - Check to see if you have finished retrieving all of the recipes,
   //            if you have, then save the recipes to storage using the function
   //            we have provided. Then, pass the recipes array to the Promise's
